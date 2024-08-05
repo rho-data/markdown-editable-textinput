@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:markdown_editable_textinput/format_markdown.dart';
 import 'package:markdown_editable_textinput/markdown_text_input.dart';
@@ -52,12 +51,15 @@ void main() {
     expect(find.byKey(imageKey), findsOneWidget);
   });
 
-  testWidgets('MarkdownTextInput make bold from selection', (WidgetTester tester) async {
+  testWidgets('MarkdownTextInput make bold from selection',
+      (WidgetTester tester) async {
     var initialValue = 'initial value';
-    await tester.pumpWidget(component(initialValue, (String value) => initialValue = value));
+    await tester.pumpWidget(
+        component(initialValue, (String value) => initialValue = value));
 
     final formfield = tester.widget<EditableText>(find.text(initialValue));
-    formfield.controller.selection = TextSelection(baseOffset: 0, extentOffset: initialValue.length);
+    formfield.controller.selection =
+        TextSelection(baseOffset: 0, extentOffset: initialValue.length);
 
     final boldKey = const Key('bold_button');
     await tester.tap(find.byKey(boldKey));
@@ -65,12 +67,15 @@ void main() {
     expect(initialValue, '**initial value**');
   });
 
-  testWidgets('MarkdownTextInput make italic from selection', (WidgetTester tester) async {
+  testWidgets('MarkdownTextInput make italic from selection',
+      (WidgetTester tester) async {
     var initialValue = 'initial value';
-    await tester.pumpWidget(component(initialValue, (String value) => initialValue = value));
+    await tester.pumpWidget(
+        component(initialValue, (String value) => initialValue = value));
 
     final formfield = tester.widget<EditableText>(find.text(initialValue));
-    formfield.controller.selection = TextSelection(baseOffset: 0, extentOffset: initialValue.length);
+    formfield.controller.selection =
+        TextSelection(baseOffset: 0, extentOffset: initialValue.length);
 
     final boldKey = const Key('italic_button');
     await tester.tap(find.byKey(boldKey));
@@ -78,12 +83,15 @@ void main() {
     expect(initialValue, '_initial value_');
   });
 
-  testWidgets('MarkdownTextInput make strikethrough from selection', (WidgetTester tester) async {
+  testWidgets('MarkdownTextInput make strikethrough from selection',
+      (WidgetTester tester) async {
     var initialValue = 'initial value';
-    await tester.pumpWidget(component(initialValue, (String value) => initialValue = value));
+    await tester.pumpWidget(
+        component(initialValue, (String value) => initialValue = value));
 
     final formfield = tester.widget<EditableText>(find.text(initialValue));
-    formfield.controller.selection = TextSelection(baseOffset: 0, extentOffset: initialValue.length);
+    formfield.controller.selection =
+        TextSelection(baseOffset: 0, extentOffset: initialValue.length);
 
     final boldKey = const Key('strikethrough_button');
     await tester.tap(find.byKey(boldKey));
@@ -91,12 +99,15 @@ void main() {
     expect(initialValue, '~~initial value~~');
   });
 
-  testWidgets('MarkdownTextInput make code from selection', (WidgetTester tester) async {
+  testWidgets('MarkdownTextInput make code from selection',
+      (WidgetTester tester) async {
     var initialValue = 'initial value';
-    await tester.pumpWidget(component(initialValue, (String value) => initialValue = value));
+    await tester.pumpWidget(
+        component(initialValue, (String value) => initialValue = value));
 
     final formfield = tester.widget<EditableText>(find.text(initialValue));
-    formfield.controller.selection = TextSelection(baseOffset: 0, extentOffset: initialValue.length);
+    formfield.controller.selection =
+        TextSelection(baseOffset: 0, extentOffset: initialValue.length);
 
     final boldKey = const Key('code_button');
     await tester.tap(find.byKey(boldKey));
@@ -104,12 +115,15 @@ void main() {
     expect(initialValue, '```initial value```');
   });
 
-  testWidgets('MarkdownTextInput make link from selection', (WidgetTester tester) async {
+  testWidgets('MarkdownTextInput make link from selection',
+      (WidgetTester tester) async {
     var initialValue = 'initial value';
-    await tester.pumpWidget(component(initialValue, (String value) => initialValue = value));
+    await tester.pumpWidget(
+        component(initialValue, (String value) => initialValue = value));
 
     final formfield = tester.widget<EditableText>(find.text(initialValue));
-    formfield.controller.selection = TextSelection(baseOffset: 0, extentOffset: initialValue.length);
+    formfield.controller.selection =
+        TextSelection(baseOffset: 0, extentOffset: initialValue.length);
 
     final boldKey = const Key('link_button');
     await tester.tap(find.byKey(boldKey));
@@ -117,12 +131,15 @@ void main() {
     expect(initialValue, '[initial value](initial value)');
   });
 
-  testWidgets('MarkdownTextInput make list from selection', (WidgetTester tester) async {
+  testWidgets('MarkdownTextInput make list from selection',
+      (WidgetTester tester) async {
     var initialValue = 'initial\nvalue';
-    await tester.pumpWidget(component(initialValue, (String value) => initialValue = value));
+    await tester.pumpWidget(
+        component(initialValue, (String value) => initialValue = value));
 
     final formfield = tester.widget<EditableText>(find.text(initialValue));
-    formfield.controller.selection = TextSelection(baseOffset: 0, extentOffset: initialValue.length);
+    formfield.controller.selection =
+        TextSelection(baseOffset: 0, extentOffset: initialValue.length);
 
     final boldKey = const Key('list_button');
     await tester.tap(find.byKey(boldKey));
@@ -130,12 +147,15 @@ void main() {
     expect(initialValue, '* initial\n* value');
   });
 
-  testWidgets('MarkdownTextInput make blockquote from selection', (WidgetTester tester) async {
+  testWidgets('MarkdownTextInput make blockquote from selection',
+      (WidgetTester tester) async {
     var initialValue = 'initial\nvalue';
-    await tester.pumpWidget(component(initialValue, (String value) => initialValue = value));
+    await tester.pumpWidget(
+        component(initialValue, (String value) => initialValue = value));
 
     final formfield = tester.widget<EditableText>(find.text(initialValue));
-    formfield.controller.selection = TextSelection(baseOffset: 0, extentOffset: initialValue.length);
+    formfield.controller.selection =
+        TextSelection(baseOffset: 0, extentOffset: initialValue.length);
 
     final boldKey = const Key('quote_button');
     await tester.tap(find.byKey(boldKey));
@@ -143,12 +163,15 @@ void main() {
     expect(initialValue, '> initial\n> value');
   });
 
-  testWidgets('MarkdownTextInput make separator from selection', (WidgetTester tester) async {
+  testWidgets('MarkdownTextInput make separator from selection',
+      (WidgetTester tester) async {
     var initialValue = 'initial value';
-    await tester.pumpWidget(component(initialValue, (String value) => initialValue = value));
+    await tester.pumpWidget(
+        component(initialValue, (String value) => initialValue = value));
 
     final formfield = tester.widget<EditableText>(find.text(initialValue));
-    formfield.controller.selection = TextSelection(baseOffset: 0, extentOffset: initialValue.length);
+    formfield.controller.selection =
+        TextSelection(baseOffset: 0, extentOffset: initialValue.length);
 
     final boldKey = const Key('separator_button');
     await tester.tap(find.byKey(boldKey));
@@ -156,12 +179,15 @@ void main() {
     expect(initialValue, '\n------\ninitial value');
   });
 
-  testWidgets('MarkdownTextInput make image link from selection', (WidgetTester tester) async {
+  testWidgets('MarkdownTextInput make image link from selection',
+      (WidgetTester tester) async {
     var initialValue = 'initial value';
-    await tester.pumpWidget(component(initialValue, (String value) => initialValue = value));
+    await tester.pumpWidget(
+        component(initialValue, (String value) => initialValue = value));
 
     final formfield = tester.widget<EditableText>(find.text(initialValue));
-    formfield.controller.selection = TextSelection(baseOffset: 0, extentOffset: initialValue.length);
+    formfield.controller.selection =
+        TextSelection(baseOffset: 0, extentOffset: initialValue.length);
 
     final boldKey = const Key('image_button');
     await tester.tap(find.byKey(boldKey));
