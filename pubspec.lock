@@ -201,5 +201,5 @@ packages:
     source: hosted
     version: "14.3.0"
 sdks:
-  dart: "3.6.1"
+  dart: "3.7.0-323.0.dev"
   flutter: ">=3.18.0-18.0.pre.54"
